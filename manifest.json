@@ -1,0 +1,14 @@
+{
+  "name": "GitHub Repository Size",
+  "version": "1.0",
+	"author": "Klas Tärnström, klas@tarnstrom.se",
+  "manifest_version": 2,
+	"default_locale": "en",
+	"permissions": [
+	],
+  "content_scripts": [{
+      "matches": ["*://github.com/*/*"],
+      "js": ["src/content.js"]
+  }],
+  "web_accessible_resources": ["src/inject.js", "src/dl-icon.svg"]
+}
