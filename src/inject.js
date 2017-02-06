@@ -33,7 +33,13 @@ function inject() {
         var size = data.size;
         var measurement = ' kB';
 
-        if (data.size > 1000) {
+        if (data.size > Math.pow(10, 12)) {
+          size = (size/Math.pow(10, 12)).toFixed(2);
+          measurement = ' TB';
+        } else if (data.size > Math.pow(10, 6)) {
+          size = (size/Math.pow(10, 6)).toFixed(2);
+          measurement = ' GB';
+        } else if (data.size > 1000) {
           size = (size/1000).toFixed(2);
           measurement = ' MB';
         }
